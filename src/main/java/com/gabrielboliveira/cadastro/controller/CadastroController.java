@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/cadastro")
 @SessionAttributes({"dadosPessoais", "endereco"})
@@ -47,12 +49,12 @@ public class CadastroController {
     public String salvarEndereco(@ModelAttribute @Valid EnderecoDTO dto, Model model) {
         // Busca o endereço via API de CEP caso esteja vazio
         if (dto.getCep() != null && (dto.getLogradouro() == null || dto.getLogradouro().isEmpty())) {
-            EnderecoDTO enderecoApi = viaCepService.buscarEndereco(dto.getCep());
-            if (enderecoApi != null) {
-                dto.setLogradouro(enderecoApi.getLogradouro());
-                dto.setBairro(enderecoApi.getBairro());
-                dto.setCidade(enderecoApi.getCidade());
-                dto.setEstado(enderecoApi.getEstado());
+            Optional<EnderecoDTO> enderecoApi = viaCepService.buscarEndereco(dto.getCep());
+            if (enderecoApi.isPresent()) {
+                dto.setLogradouro(enderecoApi.get().getLogradouro());
+                dto.setBairro(enderecoApi.get().getBairro());
+                dto.setCidade(enderecoApi.get().getCidade());
+                dto.setEstado(enderecoApi.get().getEstado());
             }
         }
         model.addAttribute("endereco", dto);
