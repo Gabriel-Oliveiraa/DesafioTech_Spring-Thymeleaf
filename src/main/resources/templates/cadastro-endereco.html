@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Endereço</title>
+</head>
+<body>
+<h1>Cadastro de Endereço</h1>
+
+<form action="/cadastro/endereco" method="post">
+  <div>
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep" value="${endereco.cep}" required />
+    <button type="button" onclick="buscarEndereco()">Buscar Endereço</button>
+    <span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"></span>
+  </div>
+
+  <div>
+    <label for="logradouro">Logradouro:</label>
+    <input type="text" id="logradouro" name="logradouro" value="${endereco.logradouro}" required />
+    <span th:if="${#fields.hasErrors('logradouro')}" th:errors="*{logradouro}"></span>
+  </div>
+
+  <div>
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" name="numero" value="${endereco.numero}" required />
+    <span th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}"></span>
+  </div>
+
+  <div>
+    <label for="complemento">Complemento:</label>
+    <input type="text" id="complemento" name="complemento" value="${endereco.complemento}" />
+  </div>
+
+  <div>
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" name="bairro" value="${endereco.bairro}" required />
+    <span th:if="${#fields.hasErrors('bairro')}" th:errors="*{bairro}"></span>
+  </div>
+
+  <div>
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" value="${endereco.cidade}" required />
+    <span th:if="${#fields.hasErrors('cidade')}" th:errors="*{cidade}"></span>
+  </div>
+
+  <div>
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" name="estado" value="${endereco.estado}" required />
+    <span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></span>
+  </div>
+
+  <button type="submit">Próximo</button>
+</form>
+
+<script>
+  function buscarEndereco() {
+      const cep = document.getElementById('cep').value;
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById('logradouro').value = data.logradouro;
+              document.getElementById('bairro').value = data.bairro;
+              document.getElementById('cidade').value = data.localidade;
+              document.getElementById('estado').value = data.uf;
+          })
+          .catch(error => alert("Erro ao buscar o endereço"));
+  }
+</script>
+
+</body>
+</html>

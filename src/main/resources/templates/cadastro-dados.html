@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Dados Pessoais</title>
+</head>
+<body>
+<h1>Cadastro de Dados Pessoais</h1>
+
+<form action="/cadastro/pessoais" method="post">
+    <div>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" value="${dadosPessoais.cpf}" required />
+        <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+    </div>
+
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="${dadosPessoais.nome}" required />
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+    </div>
+
+    <div>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" name="rg" value="${dadosPessoais.rg}" required />
+        <span th:if="${#fields.hasErrors('rg')}" th:errors="*{rg}"></span>
+    </div>
+
+    <div>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" value="${dadosPessoais.dataNascimento}" required />
+        <span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"></span>
+    </div>
+
+    <div>
+        <label for="nomeMae">Nome da Mãe:</label>
+        <input type="text" id="nomeMae" name="nomeMae" value="${dadosPessoais.nomeMae}" required />
+        <span th:if="${#fields.hasErrors('nomeMae')}" th:errors="*{nomeMae}"></span>
+    </div>
+
+    <button type="submit">Próximo</button>
+</form>
+
+</body>
+</html>
