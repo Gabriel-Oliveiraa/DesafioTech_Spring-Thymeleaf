@@ -10,7 +10,7 @@
 
 <form action="/cadastro/endereco" method="post">
   <div>
-    <label for="cep">CEP:</label>
+    <label for="cep">Qual seu CEP?</label>
     <input type="text" id="cep" name="cep" value="${endereco.cep}" required />
     <button type="button" onclick="buscarEndereco()">Buscar Endereço</button>
     <span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"></span>
@@ -29,7 +29,7 @@
   </div>
 
   <div>
-    <label for="complemento">Complemento:</label>
+    <label for="complemento">Complemento (Opcional)</label>
     <input type="text" id="complemento" name="complemento" value="${endereco.complemento}" />
   </div>
 
@@ -51,7 +51,7 @@
     <span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></span>
   </div>
 
-  <button type="submit">Próximo</button>
+  <button type="submit">Avançar</button>
 </form>
 
 <script>

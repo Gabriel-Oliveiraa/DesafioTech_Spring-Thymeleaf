@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Dados Pessoais</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <h1>Cadastro de Dados Pessoais</h1>
 
 <form action="/cadastro/pessoais" method="post">
     <div>
-        <label for="cpf">CPF:</label>
+        <label for="cpf">Digite seu CPF</label>
         <input type="text" id="cpf" name="cpf" value="${dadosPessoais.cpf}" required />
         <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
     </div>
 
     <div>
-        <label for="nome">Nome:</label>
+        <label for="nome">Nome Completo</label>
         <input type="text" id="nome" name="nome" value="${dadosPessoais.nome}" required />
         <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
     </div>
@@ -39,7 +40,7 @@
         <span th:if="${#fields.hasErrors('nomeMae')}" th:errors="*{nomeMae}"></span>
     </div>
 
-    <button type="submit">Próximo</button>
+    <button type="submit">Avançar</button>
 </form>
 
 </body>
