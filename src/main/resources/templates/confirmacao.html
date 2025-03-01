@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
   <title>Confirmação de Cadastro</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<h1>Confirmação de Cadastro</h1>
+<div class="container">
+  <div class="form-section">
+    <header>
+      <img src="/assets/images/logo-prefeitura.png" alt="Prefeitura de Serra Talhada">
+    </header>
+    <h1>Confirmação de Cadastro</h1>
 
-<p>Dados Pessoais:</p>
-<ul>
-  <li>Nome: <span th:text="${dadosPessoais.nome}"></span></li>
-  <li>CPF: <span th:text="${dadosPessoais.cpf}"></span></li>
-  <li>RG: <span th:text="${dadosPessoais.rg}"></span></li>
-  <li>Data de Nascimento: <span th:text="${dadosPessoais.dataNascimento}"></span></li>
-  <li>Nome da Mãe: <span th:text="${dadosPessoais.nomeMae}"></span></li>
-</ul>
+    <div class="info">
+      <h2>Dados Pessoais</h2>
+      <p><strong>Nome:</strong> th:text="${dadosPessoais.nome}"</p>
+      <p><strong>CPF:</strong> th:text="${dadosPessoais.cpf}"</p>
+      <p><strong>RG:</strong> th:text="${dadosPessoais.rg}"</p>
+      <p><strong>Data de Nascimento:</strong> th:text="${dadosPessoais.dataNascimento}"</p>
+      <p><strong>Nome da mãe:</strong> th:text="${dadosPessoais.nomeMae}"</p>
+    </div>
 
-<p>Endereço:</p>
-<ul>
-  <li>CEP: <span th:text="${endereco.cep}"></span></li>
-  <li>Logradouro: <span th:text="${endereco.logradouro}"></span></li>
-  <li>Bairro: <span th:text="${endereco.bairro}"></span></li>
-  <li>Cidade: <span th:text="${endereco.cidade}"></span></li>
-  <li>Estado: <span th:text="${endereco.estado}"></span></li>
-</ul>
+    <div class="info">
+      <h2>Endereço</h2>
+      <p><strong>CEP:</strong> th:text="${endereco.cep}"</p>
+      <p><strong>Logradouro:</strong>text="${endereco.logradouro}"</p>
+      <p><strong>Bairro:</strong>"${endereco.bairro}"</p>
+      <p><strong>Cidade:</strong>"${endereco.cidade}"</p>
+      <p><strong>Estado:</strong>"${endereco.estado}"</p>
+    </div>
 
-<form action="/cadastro/finalizar" method="post">
-  <button type="submit">Finalizar Cadastro</button>
-</form>
+
+
+    <form action="/cadastro/finalizar" method="post">
+      <button type="submit" class="btn">Finaliza Cadastro</button>
+    </form>
+  </div>
+
+  <div class="illustration-section">
+    <img src="/assets/images/icon-confirmation.png" alt="Checklist" class="checklist-icon">
+    <p class="etapa">3ª ETAPA</p>
+  </div>
+</div>
 </body>
 </html>
