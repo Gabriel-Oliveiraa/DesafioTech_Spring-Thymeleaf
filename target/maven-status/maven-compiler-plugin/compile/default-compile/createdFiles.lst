@@ -1,0 +1,9 @@
+com\gabrielboliveira\cadastro\CadastroUsuariosApplication.class
+com\gabrielboliveira\cadastro\model\EnderecoDTO.class
+com\gabrielboliveira\cadastro\validation\CpfValid.class
+com\gabrielboliveira\cadastro\controller\Config.class
+com\gabrielboliveira\cadastro\validation\CpfValidator.class
+com\gabrielboliveira\cadastro\service\ViaCepService$ViaCepResponse.class
+com\gabrielboliveira\cadastro\service\ViaCepService.class
+com\gabrielboliveira\cadastro\controller\CadastroController.class
+com\gabrielboliveira\cadastro\model\DadosPessoaisDTO.class

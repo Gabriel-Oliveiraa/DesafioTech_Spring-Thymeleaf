@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Confirmação de Cadastro</title>
+</head>
+<body>
+<h1>Confirmação de Cadastro</h1>
+
+<p>Dados Pessoais:</p>
+<ul>
+  <li>Nome: <span th:text="${dadosPessoais.nome}"></span></li>
+  <li>CPF: <span th:text="${dadosPessoais.cpf}"></span></li>
+  <li>RG: <span th:text="${dadosPessoais.rg}"></span></li>
+  <li>Data de Nascimento: <span th:text="${dadosPessoais.dataNascimento}"></span></li>
+  <li>Nome da Mãe: <span th:text="${dadosPessoais.nomeMae}"></span></li>
+</ul>
+
+<p>Endereço:</p>
+<ul>
+  <li>CEP: <span th:text="${endereco.cep}"></span></li>
+  <li>Logradouro: <span th:text="${endereco.logradouro}"></span></li>
+  <li>Bairro: <span th:text="${endereco.bairro}"></span></li>
+  <li>Cidade: <span th:text="${endereco.cidade}"></span></li>
+  <li>Estado: <span th:text="${endereco.estado}"></span></li>
+</ul>
+
+<form action="/cadastro/finalizar" method="post">
+  <button type="submit">Finalizar Cadastro</button>
+</form>
+</body>
+</html>

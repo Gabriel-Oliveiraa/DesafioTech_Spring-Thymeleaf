@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Endereço</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="illustration-section">
+    <img src="/assets/images/map-icon.png" alt="Ilustração de Mapa">
+    <p class="etapa">2ª ETAPA</p>
+  </div>
+
+  <div class="form-section">
+    <header>
+      <img src="/assets/images/logo-prefeitura.png" alt="Prefeitura de Serra Talhada">
+    </header>
+
+    <h1>Cadastro de Endereço</h1>
+
+    <form action="/cadastro/confirmacao" method="GET">
+      <label for="cep">Qual seu CEP?</label>
+      <input type="text" id="cep" name="cep" placeholder="O CEP é obrigatório" required>
+
+      <label for="logradouro">Logradouro</label>
+      <input type="text" id="logradouro" name="logradouro" placeholder="O logradouro é obrigatório" required>
+
+      <div class="row">
+        <div class="column">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero" placeholder="Obrigatório" required>
+        </div>
+        <div class="column">
+          <label for="complemento">Complemento (opcional)</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Opcional">
+        </div>
+      </div>
+
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" name="bairro" placeholder="O bairro é obrigatório" required>
+
+      <div class="row">
+        <div class="column">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Obrigatório" required>
+        </div>
+        <div class="column">
+          <label for="estado">Estado</label>
+          <input type="text" id="estado" name="estado" placeholder="Obrigatório" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Avançar</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

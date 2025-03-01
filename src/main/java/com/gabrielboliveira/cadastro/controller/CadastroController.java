@@ -28,7 +28,7 @@ public class CadastroController {
         if (!model.containsAttribute("dadosPessoais")) {
             model.addAttribute("dadosPessoais", new DadosPessoaisDTO());
         }
-        return "dadosPessoais";
+        return "cadastro-dados";
     }
 
     @PostMapping("/pessoais")
@@ -42,7 +42,7 @@ public class CadastroController {
         if (!model.containsAttribute("endereco")) {
             model.addAttribute("endereco", new EnderecoDTO());
         }
-        return "endereco";
+        return "cadastro-endereco";
     }
 
     @PostMapping("/endereco")
@@ -68,7 +68,7 @@ public class CadastroController {
 
     @PostMapping("/finalizar")
     public String finalizarCadastro(SessionStatus status) {
-        status.setComplete(); // Limpa os dados da sessão
+        status.setComplete();
         return "sucesso";
     }
 }

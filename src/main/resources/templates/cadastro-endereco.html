@@ -1,73 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Endereço</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<h1>Cadastro de Endereço</h1>
-
-<form action="/cadastro/endereco" method="post">
-  <div>
-    <label for="cep">Qual seu CEP?</label>
-    <input type="text" id="cep" name="cep" value="${endereco.cep}" required />
-    <button type="button" onclick="buscarEndereco()">Buscar Endereço</button>
-    <span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"></span>
+<div class="container">
+  <div class="illustration-section">
+    <img src="/assets/images/map-icon.png" alt="Ilustração de Mapa">
+    <p class="etapa">2ª ETAPA</p>
   </div>
 
-  <div>
-    <label for="logradouro">Logradouro:</label>
-    <input type="text" id="logradouro" name="logradouro" value="${endereco.logradouro}" required />
-    <span th:if="${#fields.hasErrors('logradouro')}" th:errors="*{logradouro}"></span>
+  <div class="form-section">
+    <header>
+      <img src="/assets/images/logo-prefeitura.png" alt="Prefeitura de Serra Talhada">
+    </header>
+
+    <h1>Cadastro de Endereço</h1>
+
+    <form action="/cadastro/confirmacao" method="GET">
+      <label for="cep">Qual seu CEP?</label>
+      <input type="text" id="cep" name="cep" placeholder="O CEP é obrigatório" required>
+
+      <label for="logradouro">Logradouro</label>
+      <input type="text" id="logradouro" name="logradouro" placeholder="O logradouro é obrigatório" required>
+
+      <div class="row">
+        <div class="column">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero" placeholder="Obrigatório" required>
+        </div>
+        <div class="column">
+          <label for="complemento">Complemento (opcional)</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Opcional">
+        </div>
+      </div>
+
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" name="bairro" placeholder="O bairro é obrigatório" required>
+
+      <div class="row">
+        <div class="column">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Obrigatório" required>
+        </div>
+        <div class="column">
+          <label for="estado">Estado</label>
+          <input type="text" id="estado" name="estado" placeholder="Obrigatório" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Avançar</button>
+    </form>
   </div>
-
-  <div>
-    <label for="numero">Número:</label>
-    <input type="text" id="numero" name="numero" value="${endereco.numero}" required />
-    <span th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}"></span>
-  </div>
-
-  <div>
-    <label for="complemento">Complemento (Opcional)</label>
-    <input type="text" id="complemento" name="complemento" value="${endereco.complemento}" />
-  </div>
-
-  <div>
-    <label for="bairro">Bairro:</label>
-    <input type="text" id="bairro" name="bairro" value="${endereco.bairro}" required />
-    <span th:if="${#fields.hasErrors('bairro')}" th:errors="*{bairro}"></span>
-  </div>
-
-  <div>
-    <label for="cidade">Cidade:</label>
-    <input type="text" id="cidade" name="cidade" value="${endereco.cidade}" required />
-    <span th:if="${#fields.hasErrors('cidade')}" th:errors="*{cidade}"></span>
-  </div>
-
-  <div>
-    <label for="estado">Estado:</label>
-    <input type="text" id="estado" name="estado" value="${endereco.estado}" required />
-    <span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></span>
-  </div>
-
-  <button type="submit">Avançar</button>
-</form>
-
-<script>
-  function buscarEndereco() {
-      const cep = document.getElementById('cep').value;
-      fetch(`https://viacep.com.br/ws/${cep}/json/`)
-          .then(response => response.json())
-          .then(data => {
-              document.getElementById('logradouro').value = data.logradouro;
-              document.getElementById('bairro').value = data.bairro;
-              document.getElementById('cidade').value = data.localidade;
-              document.getElementById('estado').value = data.uf;
-          })
-          .catch(error => alert("Erro ao buscar o endereço"));
-  }
-</script>
-
+</div>
 </body>
 </html>
