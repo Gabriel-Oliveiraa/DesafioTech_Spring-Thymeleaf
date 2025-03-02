@@ -42,6 +42,8 @@ Este projeto foi desenvolvido como parte de um **desafio técnico** para o **Nú
 ```
 thymeleaf-springboot/
 │-- src/main/java/com/gabrielboliveira/cadastro
+│   │-- config/
+│   │   ├── Config.java
 │   │-- controller/
 │   │   ├── CadastroController.java
 │   │-- model/
@@ -56,7 +58,10 @@ thymeleaf-springboot/
 │   │-- cadastro-endereco.html
 │   │-- confirmacao.html
 │   │-- sucesso.html
-│-- src/main/resources/static/css/
+│-- src/main/resources/static/assets/
+│   │-- fonts
+│   │-- ID
+│   │-- images
 │   │-- styles.css
 │-- application.properties
 │-- pom.xml
