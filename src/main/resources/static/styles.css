@@ -90,6 +90,12 @@ h1 {
     margin-bottom: 20px;
 }
 
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #099a97;
+}
+
 form {
     display: flex;
     flex-direction: column;

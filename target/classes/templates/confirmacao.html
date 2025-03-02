@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +16,24 @@
 
     <div class="info">
       <h2>Dados Pessoais</h2>
-      <p><strong>Nome:</strong> th:text="${dadosPessoais.nome}"</p>
-      <p><strong>CPF:</strong> th:text="${dadosPessoais.cpf}"</p>
-      <p><strong>RG:</strong> th:text="${dadosPessoais.rg}"</p>
-      <p><strong>Data de Nascimento:</strong> th:text="${dadosPessoais.dataNascimento}"</p>
-      <p><strong>Nome da mãe:</strong> th:text="${dadosPessoais.nomeMae}"</p>
+      <p><strong>Nome:</strong> <span th:text="${dadosPessoais.nome}"></span></p>
+      <p><strong>CPF:</strong> <span th:text="${dadosPessoais.cpf}"></span></p>
+      <p><strong>RG:</strong> <span th:text="${dadosPessoais.rg}"></span></p>
+      <p><strong>Data de Nascimento:</strong> <span th:text="${dadosPessoais.dataNascimento}"></span></p>
+      <p><strong>Nome da mãe:</strong> <span th:text="${dadosPessoais.nomeMae}"></span></p>
     </div>
 
     <div class="info">
       <h2>Endereço</h2>
-      <p><strong>CEP:</strong> th:text="${endereco.cep}"</p>
-      <p><strong>Logradouro:</strong>text="${endereco.logradouro}"</p>
-      <p><strong>Bairro:</strong>"${endereco.bairro}"</p>
-      <p><strong>Cidade:</strong>"${endereco.cidade}"</p>
-      <p><strong>Estado:</strong>"${endereco.estado}"</p>
+      <p><strong>CEP:</strong> <span th:text="${endereco}"></span></p>
+      <p><strong>Logradouro:</strong> <span th:text="${endereco.logradouro}"></span></p>
+      <p><strong>Bairro:</strong> <span th:text="${endereco.bairro}"></span></p>
+      <p><strong>Cidade:</strong> <span th:text="${endereco.cidade}"></span></p>
+      <p><strong>Estado:</strong> <span th:text="${endereco.estado}"></span></p>
     </div>
 
-
-
     <form action="/cadastro/finalizar" method="post">
-      <button type="submit" class="btn">Finaliza Cadastro</button>
+      <button type="submit" class="btn">Finalizar Cadastro</button>
     </form>
   </div>
 
