@@ -47,6 +47,17 @@ public class EnderecoDTO {
     // Construtor vazio para o Spring criar instâncias sem valores
     public EnderecoDTO() {}
 
+    // Construtor de cópia
+    public EnderecoDTO(EnderecoDTO outro) {
+        this.cep = outro.cep;
+        this.logradouro = outro.logradouro;
+        this.numero = outro.numero;
+        this.complemento = outro.complemento;
+        this.bairro = outro.bairro;
+        this.cidade = outro.cidade;
+        this.estado = outro.estado;
+    }
+
     // Getters e Setters
     public String getCep() {
         return cep;
