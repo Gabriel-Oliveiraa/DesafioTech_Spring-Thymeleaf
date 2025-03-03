@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class DadosPessoaisDTO {
 
     @NotBlank(message = "O CPF é obrigatório")
-    @Pattern(regexp = "\\d{11}", message = "CPF deve conter exatamente 11 dígitos numéricos")
+    @Pattern(regexp = "\\d{11}|\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}", message = "O CPF deve conter 11 números ou estar no formato XXX.XXX.XXX-XX")
     private String cpf;
 
     @NotBlank(message = "O nome é obrigatório")

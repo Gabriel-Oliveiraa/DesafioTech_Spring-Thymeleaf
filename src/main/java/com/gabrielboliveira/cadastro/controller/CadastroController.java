@@ -73,11 +73,7 @@ public class CadastroController {
     public String exibirConfirmacao(@ModelAttribute("dadosPessoais") DadosPessoaisDTO dadosPessoais,
                                     @ModelAttribute("endereco") EnderecoDTO endereco,
                                     Model model) {
-        // Verifique se os dados pessoais e de endereço estão na sessão
-        System.out.println("Dados Pessoais na Sessão: " + dadosPessoais);
-        System.out.println("Endereço na Sessão: " + endereco);
 
-        // Adicionando dados ao modelo para serem acessados na página de confirmação
         model.addAttribute("dadosPessoais", dadosPessoais);
         model.addAttribute("endereco", endereco);
 
