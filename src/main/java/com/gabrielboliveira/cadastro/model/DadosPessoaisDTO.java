@@ -17,7 +17,7 @@ public class DadosPessoaisDTO {
     private String nome;
 
     @NotBlank(message = "O RG é obrigatório")
-    @Pattern(regexp = "\\d+", message = "RG deve conter apenas números")
+    @Pattern(regexp = "[\\d.-]+", message = "RG deve conter apenas números, pontos e traços")
     private String rg;
 
     @Past(message = "A data de nascimento deve ser no passado")
